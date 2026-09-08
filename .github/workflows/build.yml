@@ -27,12 +27,13 @@ jobs:
           type main\illicit\illicit.vcxproj
 
       - name: Verificar compiladores
-        shell: cmd
-        run: |
-          where msbuild || echo MSBuild nao encontrado
-          where devenv || echo Visual Studio nao encontrado
-          where ps3ppusnc || echo SNC nao encontrado
-          where ps3ppuld || echo SN linker nao encontrado
+  shell: cmd
+  run: |
+    where msbuild || echo MSBuild nao encontrado
+    where devenv || echo Visual Studio nao encontrado
+    where ps3ppusnc || echo SNC nao encontrado
+    where ps3ppuld || echo SN linker nao encontrado
+    exit /b 0
 
       - name: Procurar SDK PS3
         shell: powershell
